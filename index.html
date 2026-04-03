@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beacon Finance | Personal Finance</title>
+  <meta name="description" content="A fresh, premium way to track your financial journey.">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <!-- Dynamic Orbs for background animation -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar section-glass">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-logo">B</div>
+          <h2>Beacon</h2>
+        </div>
+        <nav>
+          <button class="nav-btn active" data-view="dashboard">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+            </span> 
+            <span class="nav-text">Dashboard</span>
+          </button>
+          <button class="nav-btn" data-view="cards">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+            </span> 
+            <span class="nav-text">My Cards</span>
+          </button>
+          <button class="nav-btn" data-view="transactions">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+            </span> 
+            <span class="nav-text">Transactions</span>
+          </button>
+          <button class="nav-btn" data-view="calendar">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </span> 
+            <span class="nav-text">Calendar</span>
+          </button>
+          <button class="nav-btn" data-view="budgets">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </span> 
+            <span class="nav-text">Budgets & Subscriptions</span>
+          </button>
+          <button class="nav-btn" data-view="goals">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </span> 
+            <span class="nav-text">Goals</span>
+          </button>
+          <button class="nav-btn" data-view="insights">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+            </span> 
+            <span class="nav-text">Insights</span>
+          </button>
+          <button class="nav-btn" data-view="investments">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+            </span> 
+            <span class="nav-text">Investments</span>
+          </button>
+          <button class="nav-btn" data-view="checkin">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </span> 
+            <span class="nav-text">Weekly Check-In</span>
+          </button>
+          <button class="nav-btn" data-view="settings">
+            <span class="icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </span> 
+            <span class="nav-text">Settings</span>
+          </button>
+        </nav>
+      </div>
+      <div class="sidebar-bottom">
+        <p class="subtitle">A friendlier way to own your money journey.</p>
+        <div class="metrics">Last sync: <span id="last-sync">--</span></div>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="header-text">
+          <h1 id="page-title" class="gradient-text">Dashboard</h1>
+          <p class="subtitle" id="page-subtitle">Your beautiful financial overview.</p>
+        </div>
+        <div class="topbar-right flex-row items-center" style="gap:24px; flex-wrap:wrap;">
+          <div class="glass-clock" id="live-clock">
+             <span id="clock-time">00:00:00</span>
+          </div>
+          <button id="link-bank-btn" class="secondary-btn flex-row items-center" style="gap:8px; border-color: var(--primary);"><span style="font-size: 1.1rem">🏦</span> Link Bank</button>
+          <button id="privacy-toggle" aria-label="Toggle Privacy Mode" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--text); transition: transform 0.2s; outline:none;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+            👁️
+          </button>
+          <div class="search-bar flex-row items-center" style="position:relative; flex:1; min-width: 200px;">
+            <span style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:1.1rem; pointer-events:none;">🔍</span>
+            <input type="text" id="global-search" placeholder="Search activity..." style="padding-left: 40px; border-radius: 999px; background: var(--surface-glass); backdrop-filter: blur(8px); width: 100%;">
+            <div id="search-results" class="search-dropdown"></div>
+          </div>
+          <div class="profile-pic">
+             <img src="https://ui-avatars.com/api/?name=User&background=a855f7&color=fff" alt="User Profile" />
+          </div>
+        </div>
+      </header>
+
+      <div class="views-container">
+        <!-- Dashboard Screen -->
+        <section id="dashboard" class="screen active-screen">
+          <div class="greeting-area flex-row space-between items-end mb-4">
+             <div>
+                <h2 style="font-size: 2rem; margin:0;" id="user-greeting">Good evening, Alex! 👋</h2>
+                <p class="section-desc" style="margin: 4px 0 0">Tracking your goals since 2024.</p>
+             </div>
+             <div class="flex-row items-center" style="gap:12px">
+                <div class="badge glow-badge"><span style="color:var(--primary)">★</span> Pro Tier</div>
+                <div class="badge"><span style="color:#10b981">●</span> System Live</div>
+             </div>
+          </div>
+          <div class="cards-grid">
+            <article class="card highlight-card glass-stat-card">
+              <div class="card-glow"></div>
+              <div class="card-shine"></div>
+              <div class="card-content">
+                  <div class="flex-row space-between items-center mb-2">
+                    <h3 class="card-title" style="margin:0"><span class="icon-sm">💰</span> Total Balance</h3>
+                    <div class="pulse-dot"></div>
+                  </div>
+                  <p id="total-balance" class="card-value">$0.00</p>
+                  <svg id="balance-sparkline" width="100%" height="40" viewBox="0 0 200 40" preserveAspectRatio="none" style="margin-top: 12px; overflow: visible;">
+                     <defs>
+                       <filter id="glowSpark">
+                          <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="var(--primary)" flood-opacity="0.4"/>
+                       </filter>
+                     </defs>
+                     <path id="sparkline-path" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowSpark)" />
+                  </svg>
+              </div>
+            </article>
+            <article class="card glass-stat-card">
+              <div class="card-shine"></div>
+              <div class="card-content">
+                  <h3 class="card-title"><span class="icon-sm">📉</span> Monthly Spend</h3>
+                  <p id="monthly-spend" class="card-value">$0.00</p>
+                  <p class="section-desc" style="font-size:0.75rem; margin-top:8px">4 days until next billing cycle</p>
+              </div>
+            </article>
+            <article class="card glass-stat-card">
+              <div class="card-shine"></div>
+              <div class="card-content">
+                  <h3 class="card-title"><span class="icon-sm">🎯</span> Goal Progress</h3>
+                  <p id="goal-progress" class="card-value">0%</p>
+                  <div class="mini-progress mt-2"><div class="mini-progress-inner" style="width: 45%"></div></div>
+              </div>
+            </article>
+            <article class="card glass-stat-card">
+              <div class="card-shine"></div>
+              <div class="card-content">
+                  <h3 class="card-title"><span class="icon-sm">❤️</span> Wellness Score</h3>
+                  <p id="finance-score" class="card-value">0/100</p>
+                  <p class="section-desc" style="font-size:0.75rem; margin-top:8px">Based on AI spending analysis</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="split layout-split mt-4">
+            <section class="panel glass-panel">
+              <h2 class="section-title">Live Financial Mood</h2>
+              <div class="progress-ring-container">
+                <div class="progress-ring" aria-label="Wellness score ring">
+                  <svg width="220" height="220" viewBox="0 0 120 120">
+                    <defs>
+                      <linearGradient id="gradientRing" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="var(--secondary)" />
+                        <stop offset="100%" stop-color="var(--primary)" />
+                      </linearGradient>
+                      <filter id="glowDrop" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="var(--primary)" flood-opacity="0.5"/>
+                      </filter>
+                    </defs>
+                    <circle cx="60" cy="60" r="44" fill="none" stroke="var(--border)" stroke-width="8" />
+                    <!-- Circle rotated by default, we rely on js strokeDashoffset -->
+                    <circle id="gauge-circle" class="progress-ring__circle" cx="60" cy="60" r="44" fill="none" stroke="url(#gradientRing)" stroke-width="8" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="276.46" transform="rotate(-90 60 60)" filter="url(#glowDrop)" />
+                  </svg>
+                  <div id="gauge-text" class="gauge-text">0%</div>
+                </div>
+                <p id="gauge-hint" class="gauge-hint">First check in to unlock an AI-style wellness score</p>
+              </div>
+            </section>
+
+            <div class="dashboard-right">
+              <section class="panel glass-panel">
+                <h2 class="section-title">Spending Snapshot</h2>
+                <div class="bar-chart" id="spending-breakdown"></div>
+              </section>
+              
+              <section class="panel glass-panel mt-4">
+                <h2 class="section-title">Latest Insights</h2>
+                <ul id="latest-insights" class="insights-list"></ul>
+              </section>
+
+              <section class="panel glass-panel mt-4">
+                <h2 class="section-title">Achievements 🏆</h2>
+                <div id="achievements-list" class="flex-row" style="gap: 12px; flex-wrap: wrap;"></div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cards Screen -->
+        <section id="cards" class="screen">
+          <div class="split layout-split">
+            <article class="panel glass-panel" style="text-align:center;">
+               <h2 class="section-title mb-4">Beacon Virtual Card</h2>
+               <div class="card-3d-container" id="virtual-card-container">
+                 <div class="card-3d-inner" id="virtual-card-inner">
+                    <div class="frozen-stamp">FROZEN</div>
+                    <div class="card-front">
+                        <div class="flex-row space-between items-center" style="margin-bottom: 24px;">
+                           <div class="card-chip"></div>
+                           <h3 style="margin:0; font-weight:800; opacity:0.8; font-size:1.3rem;">Beacon</h3>
+                        </div>
+                        <div class="card-number" id="card-number-display">**** **** **** 5923</div>
+                        <div class="flex-row space-between items-end mt-4">
+                           <div class="card-name" id="card-holder-name">Alexander Doe</div>
+                           <div class="card-expiry">12/28</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-magstripe"></div>
+                        <div class="card-cvv-strip">
+                           <span style="font-size:0.7rem; margin-right:8px; color:#555;">CVV</span><span id="card-cvv-display">***</span>
+                        </div>
+                        <p style="text-align:left; font-size:0.6rem; padding:0 20px; opacity:0.8; margin-top:10px;">
+                          This card is issued by Beacon Financial. For customer service call 1-800-BEACON.
+                        </p>
+                    </div>
+                 </div>
+               </div>
+               <p class="section-desc mt-4" style="font-size:0.85rem">Click the card to flip and view security details.</p>
+            </article>
+
+            <article class="panel glass-panel">
+               <h2 class="section-title">Card Settings</h2>
+               <div class="form-grid">
+                  <div class="flex-row space-between items-center" style="padding-bottom:12px; border-bottom:1px solid var(--border);">
+                     <div style="text-align:left;">
+                       <h3 style="font-size:1rem; margin:0">Freeze Card</h3>
+                       <p style="font-size:0.8rem; margin:0; color:var(--text-muted)">Temporarily block all new purchases</p>
+                     </div>
+                     <label class="switch">
+                        <input type="checkbox" id="freeze-card-toggle">
+                        <span class="slider round"></span>
+                     </label>
+                  </div>
+                  <div class="flex-row space-between items-center" style="padding-bottom:12px; border-bottom:1px solid var(--border);">
+                     <div style="text-align:left;">
+                       <h3 style="font-size:1rem; margin:0">Show Card Details</h3>
+                       <p style="font-size:0.8rem; margin:0; color:var(--text-muted)">Reveal full card number & CVV</p>
+                     </div>
+                     <label class="switch">
+                        <input type="checkbox" id="show-details-toggle">
+                        <span class="slider round"></span>
+                     </label>
+                  </div>
+               </div>
+
+               <h2 class="section-title mt-4">Card Spend Limit</h2>
+               <div>
+                  <div class="flex-row space-between" style="font-size:0.9rem; margin-bottom:8px">
+                    <span>$1,250 Spent</span>
+                    <span style="color:var(--text-muted)">$2,000 Limit</span>
+                  </div>
+                  <div class="progress">
+                     <div class="progress-inner" style="width:62%; background:linear-gradient(90deg, #34d399, #fbbf24)"></div>
+                  </div>
+               </div>
+               <button class="secondary-btn mt-4 flex-row items-center space-between" style="width:100%;">
+                 <span>Add to Apple Wallet</span>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-1-12h2v4h-2V8zm0 6h2v2h-2v-2z"/></svg>
+               </button>
+            </article>
+          </div>
+        </section>
+
+        <!-- Transactions Screen -->
+        <section id="transactions" class="screen">
+          <article class="panel filter-panel glass-panel mb-4">
+            <h2 class="section-title">Filters</h2>
+            <div class="filter-grid">
+              <div class="input-group">
+                  <label>Type</label>
+                  <select id="filter-type"><option value="all">All</option><option value="expense">Expense</option><option value="income">Income</option></select>
+              </div>
+              <div class="input-group">
+                  <label>Category</label>
+                  <select id="filter-cat"><option value="all">All categories</option><option>Food</option><option>Transport</option><option>Rent</option><option>Utilities</option><option>Health</option><option>Entertainment</option><option>Others</option></select>
+              </div>
+              <div class="input-group">
+                  <label>Date</label>
+                  <input type="date" id="filter-date" />
+              </div>
+              <button id="clear-filter" type="button" class="secondary-btn">Clear Filter</button>
+            </div>
+          </article>
+          
+          <div class="split layout-split">
+            <article class="panel glass-panel">
+              <h2 class="section-title">New Transaction</h2>
+              <form id="transaction-form" class="form-grid">
+                <div class="input-group">
+                    <label>Type</label>
+                    <select id="tx-type"><option value="expense">Expense</option><option value="income">Income</option></select>
+                </div>
+                <div class="input-group">
+                    <label>Category</label>
+                    <select id="tx-category"><option>Food</option><option>Transport</option><option>Rent</option><option>Utilities</option><option>Health</option><option>Entertainment</option><option>Others</option></select>
+                </div>
+                <div class="input-group">
+                    <label>Amount</label>
+                    <input id="tx-amount" type="number" step="0.01" placeholder="e.g., 45.99" required>
+                </div>
+                <div class="input-group">
+                    <label>Description</label>
+                    <input id="tx-desc" type="text" placeholder="Lunch with friends">
+                </div>
+                <button type="submit" class="primary-btn mt-2">Add Transaction</button>
+              </form>
+            </article>
+
+            <article class="panel table-panel glass-panel">
+              <h2 class="section-title">History</h2>
+              <div class="table-container">
+                <table class="tx-table">
+                  <thead><tr><th>Date</th><th>Type</th><th>Category</th><th>Description</th><th>Amount</th><th>Action</th></tr></thead>
+                  <tbody id="tx-list"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Calendar Screen -->
+        <section id="calendar" class="screen">
+          <article class="panel glass-panel">
+            <div class="flex-row space-between items-center mb-4">
+               <h2 class="section-title" style="margin: 0;" id="calendar-month-title">This Month</h2>
+               <div class="flex-row items-center" style="gap:12px">
+                  <button id="cal-prev" class="secondary-btn">&larr;</button>
+                  <button id="cal-today" class="primary-btn" style="padding: 10px 16px;">Today</button>
+                  <button id="cal-next" class="secondary-btn">&rarr;</button>
+               </div>
+            </div>
+            <div class="calendar-header-days">
+              <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+            </div>
+            <div id="calendar-grid" class="calendar-grid">
+               <!-- dynamically populated -->
+            </div>
+          </article>
+        </section>
+
+        <!-- Budgets & Subscriptions Screen -->
+        <section id="budgets" class="screen">
+          <div class="split layout-split">
+            <!-- Monthly Budgets -->
+            <article class="panel glass-panel">
+              <h2 class="section-title">Monthly Budgets</h2>
+              <p class="section-desc">Keep your spending limits in check.</p>
+              
+              <form id="budget-form" class="form-grid mb-4">
+                <div class="input-group">
+                  <label>Category</label>
+                  <select id="budget-category"><option>Food</option><option>Transport</option><option>Rent</option><option>Utilities</option><option>Health</option><option>Entertainment</option><option>Others</option></select>
+                </div>
+                <div class="input-group">
+                  <label>Monthly Limit</label>
+                  <input id="budget-limit" type="number" step="0.01" placeholder="e.g., 300" required>
+                </div>
+                <button type="submit" class="primary-btn mt-2">Set Budget</button>
+              </form>
+
+              <div id="budget-list" class="goal-list"></div>
+            </article>
+
+            <!-- Subscriptions -->
+            <article class="panel glass-panel">
+              <h2 class="section-title">Active Subscriptions</h2>
+              <p class="section-desc">Fixed monthly costs tracked automatically.</p>
+              
+              <form id="sub-form" class="form-grid mb-4">
+                <div class="input-group">
+                  <label>Service Name</label>
+                  <input id="sub-name" type="text" placeholder="e.g. Netflix" required>
+                </div>
+                <div class="input-group">
+                  <label>Cost/Month</label>
+                  <input id="sub-cost" type="number" step="0.01" placeholder="15.99" required>
+                </div>
+                <button type="submit" class="primary-btn mt-2">Add Subscription</button>
+              </form>
+
+              <div id="sub-list" class="goal-list"></div>
+              <div class="mt-4 pt-4" style="border-top:1px solid var(--border)">
+                <h3 style="font-size: 1rem; color: var(--text-muted);">Total Monthly Fixed: <span id="sub-total" class="highlight-text" style="font-size: 1.5rem; float: right;">$0.00</span></h3>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Goals Screen -->
+        <section id="goals" class="screen">
+          <div class="split layout-split">
+            <article class="panel glass-panel">
+              <h2 class="section-title">Create a Savings Goal</h2>
+              <form id="goal-form" class="form-grid">
+                <div class="input-group">
+                    <label>Goal name</label>
+                    <input id="goal-name" type="text" placeholder="e.g. Vacation" required>
+                </div>
+                <div class="input-group">
+                    <label>Target amount</label>
+                    <input id="goal-amount" type="number" step="0.01" placeholder="5000" required>
+                </div>
+                <div class="input-group">
+                    <label>Deadline (optional)</label>
+                    <input id="goal-by" type="date">
+                </div>
+                <button type="submit" class="primary-btn mt-2">Add Goal</button>
+              </form>
+            </article>
+            <article class="panel glass-panel">
+              <h2 class="section-title">Active Goals</h2>
+              <div id="goal-list" class="goal-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Insights Screen -->
+        <section id="insights" class="screen">
+          <div class="split layout-split">
+            <div class="panel glass-panel">
+                <h2 class="section-title highlight-text">Insights & Actions</h2>
+                <p class="section-desc">Automated advice for every week based on your spend behavior.</p>
+                <ul id="insights-list" class="insights-list large"></ul>
+            </div>
+            
+            <div class="panel glass-panel">
+                <h2 class="section-title" style="color: var(--secondary)">AI Month Forecast 🔮</h2>
+                <p class="section-desc">Predicting your trajectory for this month.</p>
+                <div class="forecast-box mb-4">
+                   <h3 style="font-size: 0.9rem; color: var(--text-muted); font-weight: 500;">Projected Savings by EOM</h3>
+                   <p id="forecast-savings" style="font-size: 2.5rem; font-weight: 700; margin: 8px 0; color: var(--text);">$0.00</p>
+                   <p id="forecast-text" style="font-size: 0.85rem; color: var(--text-muted);">Based on your current run rate.</p>
+                </div>
+
+                <h3 class="section-title" style="font-size:1.1rem; margin-top:24px;">30-Day Spending Intensity</h3>
+                <div id="spending-heatmap" class="heatmap-grid mt-2"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Investments Screen -->
+        <section id="investments" class="screen">
+          <div class="market-ticker glass-panel mb-4">
+             <div class="ticker-wrapper" id="ticker-container">
+                <!-- populated by JS -->
+                <span class="ticker-item">BTC: <span class="text-positive">$64,250 (+1.2%)</span></span>
+                <span class="ticker-item">ETH: <span class="text-positive">$3,420 (+0.8%)</span></span>
+                <span class="ticker-item">AAPL: <span class="text-negative">$189.20 (-0.4%)</span></span>
+                <span class="ticker-item">TSLA: <span class="text-positive">$175.40 (+4.5%)</span></span>
+                <span class="ticker-item">VOO: <span class="text-positive">$425.50 (+0.5%)</span></span>
+                <span class="ticker-item">GLD: <span class="text-negative">$215.10 (-0.1%)</span></span>
+             </div>
+          </div>
+          <div class="split layout-split">
+            <article class="panel glass-panel">
+              <div class="flex-row space-between items-center mb-4">
+                <h2 class="section-title" style="margin: 0;">Portfolio Value</h2>
+                <button id="add-investment-btn" class="secondary-btn">+ Add Asset</button>
+              </div>
+              <p id="portfolio-total" style="font-size: 2.5rem; font-weight: 700; color: var(--text);">$0.00</p>
+              <p id="portfolio-change" style="font-size: 0.95rem; margin-top: 8px;">+0.00% All Time</p>
+              
+              <div class="mt-4">
+                <h3 class="section-title" style="font-size: 1.2rem;">Assets</h3>
+                <div id="investments-list" class="goal-list mt-2"></div>
+              </div>
+            </article>
+
+            <article class="panel glass-panel highlight-card">
+              <div class="card-glow"></div>
+              <h2 class="section-title">Asset Allocation</h2>
+              <div class="progress-ring-container mt-4" style="padding:0; min-height: 250px;">
+                <svg width="220" height="220" viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="44" fill="none" stroke="var(--border)" stroke-width="16" />
+                  <g id="allocation-svg-group"></g>
+                </svg>
+                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center;">
+                   <span style="font-size:0.9rem; color:var(--text-muted);">Assets</span><br>
+                   <span id="allocation-count" style="font-size:1.5rem; font-weight:700;">0</span>
+                </div>
+              </div>
+              <div id="allocation-legend" class="flex-row mt-4" style="gap:12px; flex-wrap:wrap; justify-content:center;"></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Weekly Check-in Screen -->
+        <section id="checkin" class="screen">
+          <div class="split layout-split">
+              <article class="panel gradient-border-panel glass-panel relative">
+                <div class="panel-flare"></div>
+                <div class="flex-row space-between items-center mb-2">
+                   <h2 class="section-title" style="margin:0">Weekly Money Check-In</h2>
+                   <span id="mood-emoji" style="font-size: 2.5rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-origin: center;">😐</span>
+                </div>
+                <p class="section-desc mb-4">Rate your money mood & reflection.</p>
+                <form id="checkin-form" class="form-grid">
+                  <div class="input-group">
+                      <label>Week ending</label>
+                      <input id="checkin-date" type="date" required>
+                  </div>
+                  <div class="input-group mood-slider-container">
+                      <label>Money mood: <span id="mood-label" class="highlight-text">Balanced</span></label>
+                      <input id="checkin-mood" type="range" min="0" max="10" value="5" class="mood-slider">
+                  </div>
+                  <div class="input-group">
+                      <label>Journal note</label>
+                      <textarea id="checkin-note" rows="3" placeholder="What went well? What can improve?"></textarea>
+                  </div>
+                  <button type="submit" class="primary-btn mt-2">Save Check-In</button>
+                </form>
+              </article>
+              <article class="panel glass-panel">
+                <h2 class="section-title">History</h2>
+                <ul id="checkin-list" class="checkin-list"></ul>
+              </article>
+          </div>
+        </section>
+
+        <!-- Settings Screen -->
+        <section id="settings" class="screen">
+          <article class="panel glass-panel max-w-lg">
+            <h2 class="section-title">App Experience Settings</h2>
+            <p class="section-desc mb-4">Customize look and behavior.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Theme mode</label>
+                    <select id="theme-select"><option value="auto">Auto</option><option value="light">Light</option><option value="dark">Dark</option></select>
+                </div>
+                <div class="input-group">
+                    <label>Currency</label>
+                    <select id="currency-select"><option value="USD">USD</option><option value="EUR">EUR</option><option value="INR">INR</option></select>
+                </div>
+                <div class="input-group toggle-group flex-row space-between items-center mt-2">
+                    <label>Show advanced spend alerts</label>
+                    <label class="switch">
+                      <input type="checkbox" id="alert-toggle" checked>
+                      <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+          </article>
+          <article class="panel glass-panel max-w-lg mt-4">
+            <h2 class="section-title">Data Management</h2>
+            <p class="section-desc mb-4">Export or reset your financial records.</p>
+            <div class="flex-row items-center" style="gap: 12px; flex-wrap: wrap;">
+               <button id="export-csv-btn" class="secondary-btn">Export CSV</button>
+               <button id="load-demo-btn" class="secondary-btn" style="color: var(--secondary); border-color: var(--secondary)">Load Demo Data</button>
+               <button id="wipe-data-btn" class="secondary-btn" style="color: #ef4444; border-color: #ef4444;">Wipe Data</button>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button id="fab-btn" class="fab-btn" aria-label="Quick Add">
+       <span style="font-size: 1.5rem; line-height: 1;">+</span>
+    </button>
+
+    <!-- Quick Add Modal -->
+    <div id="quick-add-modal" class="modal-overlay hidden">
+       <div class="modal-content glass-panel">
+          <div class="flex-row space-between items-center mb-4">
+             <h2 class="section-title" style="margin:0">Quick Add</h2>
+             <button id="close-modal-btn" style="background:transparent; border:none; color:var(--text); font-size:1.5rem; cursor:pointer">&times;</button>
+          </div>
+          <button id="scan-receipt-btn" class="secondary-btn flex-row items-center" style="width: 100%; justify-content: center; gap: 8px; margin-bottom: 16px;">
+             <span>📸</span> Auto-scan Receipt (AI)
+          </button>
+          <div id="scanner-animation" class="hidden" style="margin-bottom: 16px; text-align:center; padding: 24px; border: 1px dashed var(--primary); border-radius: 8px; position: relative; overflow: hidden; background: rgba(192,132,252,0.05);">
+             <div class="scanner-laser"></div>
+             <p style="margin:0; font-size: 0.9rem; color: var(--primary);">Analyzing receipt via AI...</p>
+          </div>
+          <form id="quick-transaction-form" class="form-grid">
+            <div class="input-group">
+                <label>Type</label>
+                <select id="quick-tx-type"><option value="expense">Expense</option><option value="income">Income</option></select>
+            </div>
+            <div class="input-group">
+                <label>Category</label>
+                <select id="quick-tx-category"><option>Food</option><option>Transport</option><option>Rent</option><option>Utilities</option><option>Health</option><option>Entertainment</option><option>Others</option></select>
+            </div>
+            <div class="flex-row" style="gap:16px">
+              <div class="input-group" style="flex:1">
+                  <label>Amount</label>
+                  <input id="quick-tx-amount" type="number" step="0.01" placeholder="45.99" required>
+              </div>
+              <div class="input-group" style="flex:1">
+                  <label>Description</label>
+                  <input id="quick-tx-desc" type="text" placeholder="Optional">
+              </div>
+            </div>
+            <div class="flex-row" style="gap:12px; margin-top: 16px;">
+               <button type="submit" class="primary-btn" style="flex:1">Save Transaction</button>
+            </div>
+          </form>
+       </div>
+    </div>
+
+    <!-- Bank Link Modal -->
+    <div id="bank-link-modal" class="modal-overlay hidden">
+       <div class="modal-content glass-panel" style="max-width: 450px; text-align:center; padding: 40px 32px">
+          <div id="bank-step-1">
+             <div style="font-size: 3rem; margin-bottom: 16px;">🏦</div>
+             <h2 class="section-title">Connect your Bank</h2>
+             <p class="section-desc" style="white-space: normal;">Securely link your institution to auto-sync transactions.</p>
+             <div class="form-grid mb-4" style="text-align: left;">
+                 <div class="input-group">
+                     <input type="text" placeholder="Search institutions (e.g. Chase)" />
+                 </div>
+                 <div class="flex-row" style="gap:12px; flex-wrap:wrap; justify-content:center; margin-top: 16px;">
+                    <div class="badge bank-badge" style="cursor:pointer">&bull; Chase</div>
+                    <div class="badge bank-badge" style="cursor:pointer">&bull; Bank of America</div>
+                    <div class="badge bank-badge" style="cursor:pointer">&bull; Wells Fargo</div>
+                    <div class="badge bank-badge" style="cursor:pointer">&bull; Capital One</div>
+                 </div>
+             </div>
+             <button id="mock-connect-btn" class="primary-btn" style="width: 100%;">Connect Institution</button>
+             <button id="close-bank-btn" class="secondary-btn mt-2" style="width: 100%; background:transparent; border:none; box-shadow:none;">Cancel</button>
+          </div>
+          <div id="bank-step-2" class="hidden">
+             <div class="progress-ring-container" style="min-height: 150px; padding: 0;">
+                <div style="width: 80px; height: 80px; border-radius: 50%; box-shadow: 0 0 20px rgba(192,132,252,0.5); position:relative; margin: 0 auto; animation: spinScan 1s linear infinite; border: 4px solid transparent; border-top-color: var(--primary);"></div>
+             </div>
+             <h2 class="section-title mt-4" id="bank-sync-text">Authenticating...</h2>
+             <p class="section-desc">Establishing a secure connection via Plaid API mock.</p>
+          </div>
+       </div>
+    </div>
+
+    <!-- Custom Context Menu for Transactions -->
+    <div id="custom-context-menu" class="hidden" style="position: absolute; z-index: 9999; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-glass); padding: 8px 0; min-width: 150px; backdrop-filter: blur(16px);">
+       <div class="context-item" id="ctx-copy" style="padding: 10px 16px; cursor: pointer; color: var(--text); font-size: 0.9rem; transition: background 0.2s;">🪙 Copy Amount</div>
+       <div class="context-item" id="ctx-delete" style="padding: 10px 16px; cursor: pointer; color: #ef4444; font-size: 0.9rem; transition: background 0.2s;">🗑️ Delete Record</div>
+    </div>
+
+    <!-- AI Chatbot FAB -->
+    <button id="ai-fab-btn" class="fab-btn ai-fab" aria-label="Ask Beacon AI">✨</button>
+
+    <!-- AI Chatbot Widget -->
+    <div id="ai-chat-widget" class="ai-chat-container glass-panel hidden">
+       <div class="chat-header">
+           <div class="flex-row items-center" style="gap:8px">
+              <span style="font-size:1.2rem">✨</span> <h3 style="margin:0; font-size:1.1rem; color: #f8fafc;">Beacon AI</h3>
+           </div>
+           <button id="close-chat-btn">&times;</button>
+       </div>
+       <div id="chat-messages" class="chat-messages">
+           <div class="msg ai">Hello! I'm Beacon ✨. Ask me about your highest expenses, savings goals, or net worth!</div>
+       </div>
+       <form id="chat-form" class="chat-input-area">
+           <input type="text" id="chat-input" placeholder="Ask about your money..." autocomplete="off"/>
+           <button type="submit" class="primary-btn" style="padding: 10px; min-width: 44px; display: flex; justify-content: center;">➤</button>
+       </form>
+    </div>
+
+    <!-- Transaction Details Drawer -->
+    <div id="tx-drawer" class="drawer-overlay hidden">
+      <div class="drawer-content glass-panel">
+         <div class="flex-row space-between items-center mb-4">
+            <h2 id="drawer-title" class="section-title" style="margin:0">Transaction Details</h2>
+            <button id="close-drawer" class="secondary-btn" style="border:none; background:transparent; font-size:1.5rem; cursor:pointer; color:var(--text);">&times;</button>
+         </div>
+         <div id="drawer-body" class="drawer-body">
+            <!-- Dynamic Content -->
+         </div>
+         <div class="drawer-footer mt-4" style="padding-top:20px; border-top:1px solid var(--border);">
+            <button class="primary-btn" style="width:100%">Download Receipt</button>
+         </div>
+      </div>
+    </div>
+
+    <!-- Notification Toasts -->
+    <div id="toast-container" class="toast-container"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
