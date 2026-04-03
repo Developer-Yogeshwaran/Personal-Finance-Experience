@@ -54,4 +54,4 @@ The final stage was simulating professional fintech APIs. I built a mock **Bank-
 
 ---
 
-Developed by **Alexander Doe** (Portfolio Project)
+Developed by **YOGESHWARAN A** (Portfolio Project)
